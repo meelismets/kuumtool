@@ -1,0 +1,4 @@
+DB_HOST=yoursqlhost
+DB_USER=yoursqluser
+DB_PASSWORD=yoursqlpassword
+DB_DATABASE=yoursqldatabase
