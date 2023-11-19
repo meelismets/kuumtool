@@ -1,0 +1,26 @@
+h1 {
+text-align: center;
+}
+
+div{
+  width: 1024px;
+  height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logo {
+  width: 600px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#classroom {
+  width: 1024px;
+  height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

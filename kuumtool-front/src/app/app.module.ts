@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeatmapComponent } from './heatmap/heatmap.component';
+import { ClassroomComponent } from './classroom/classroom.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeatmapComponent
+    HeatmapComponent,
+    ClassroomComponent
   ],
   imports: [
     BrowserModule,
