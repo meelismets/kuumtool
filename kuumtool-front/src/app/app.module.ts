@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeatmapComponent } from './heatmap/heatmap.component';
 import { ClassroomComponent } from './classroom/classroom.component';
+import { NotifyDirective } from './notify.directive';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeatmapComponent,
-    ClassroomComponent
+    ClassroomComponent,
+    NotifyDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

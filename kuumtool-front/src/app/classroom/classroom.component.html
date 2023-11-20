@@ -1,4 +1,10 @@
 <img id="logo" alt="logo: kuum tool" src="assets/kuumtool_transparent.png" />
-<div #map>
-  <img id="classroom" alt="classroom" src="assets/classroom-layout.jpg" />
+<div #map id="classroom">
+  <div appNotify [labelData]="spotData" [visibilityMap]="visibilityMap"></div>
+</div>
+<div id="controls">
+  <label class="form-control">
+    <input type="checkbox" [(ngModel)]="blame" name="checkbox" />
+    Süüdista nimeliselt!
+  </label>
 </div>
