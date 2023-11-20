@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { SpotService } from '../spot.service';
-import * as heatmap from 'heatmap.js';
+import { SpotService } from '../services/spot.service';
+import * as h337 from 'heatmap.js';
 import { Spot } from '../models/Spot';
-import { IntervalService } from '../interval.service';
+import { IntervalService } from '../services/interval.service';
 
 @Component({
   selector: 'app-classroom',
@@ -31,8 +31,11 @@ export class ClassroomComponent {
     let max = 100;
 
     for (let i = 0; i < this.spotData.length; i++) {
-      let val = Math.floor(Math.random()*100);
-      max = Math.max(max, val);
+      let val = this.spotData[i].volume;
+      if (this.spotData[i].simulated) {
+        val = Math.floor(Math.random()*100);
+        max = Math.max(max, val);
+      }
       let point = {
         x: this.spotData[i].axx,
         y: this.spotData[i].axy,
@@ -42,9 +45,9 @@ export class ClassroomComponent {
     }
     // heatmap data format
     let mapData = {
-      size: 40,
+      radius: 200,
       max: max,
-      min: 10,
+      min: 1,
       data: points
     };
     // if you have a set of datapoints always use setData instead of addData
@@ -52,11 +55,15 @@ export class ClassroomComponent {
     this.heatmapInstance.setData(mapData);
   }
   renderMap() {
-    // minimal heatmap instance configuration
-    this.heatmapInstance = heatmap.create({
-      // only container is required, the rest will be defaults
+    let nuConfig = {
+      radius: 80,
+      maxOpacity: .9,
+      minOpacity: 0,
+      blur: .65,
       container: this.map.nativeElement
-    });
+    };
+    // minimal heatmap instance configuration
+    this.heatmapInstance = h337.create(nuConfig);
   }
   fetchSpots(): void {
     this.spotService.getSpots().subscribe(

@@ -8,7 +8,7 @@ export class IntervalService {
   private interval$: Observable<number>;
 
   constructor() {
-    this.interval$ = interval(5000);
+    this.interval$ = interval(1000);
   }
 
   getIntervalObservable(): Observable<number> {
