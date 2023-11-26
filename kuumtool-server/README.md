@@ -23,3 +23,7 @@ Sets volume for spot with id spotId. Example:
 ### GET /api/spots/{spotId:numeric}/movement/{movement:numeric}
 Sets movement for spot with id spotId. Example:
 `/api/spots/7/movement/99`
+
+### GET /api/spots/{spotId:numeric}/rename/{name:string}
+Renames spot with id spotId to name. Example:
+`/api/spots/7/rename/Alice`

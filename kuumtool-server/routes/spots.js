@@ -1,7 +1,7 @@
 // routes.js
 const express = require('express');
 const router = express.Router();
-const { getData, updateVolume, updateMovement, updateSimulation} = require('../models/Spot'); // Import the model function
+const { getData, updateVolume, updateMovement, updateSimulation, updateName} = require('../models/Spot'); // Import the model function
 
 // Define a route to fetch data
 router.get('/', async (req, res) => {
@@ -52,6 +52,19 @@ router.get('/:id/simulated/:value', async (req, res) => {
     res.json({ success: true, message: 'Simulation updated successfully.' });
   } catch (error) {
     console.error('Error updating simulation:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+router.get('/:id/rename/:name', async (req, res) => {
+  const spotId = req.params.id;
+  const name = req.params.name;
+
+  try {
+    await updateName(spotId, name);
+    res.json({ success: true, message: 'Name updated successfully.' });
+  } catch (error) {
+    console.error('Error updating name:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });

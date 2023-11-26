@@ -62,4 +62,16 @@ async function updateSimulation(spotId, simulated) {
   }
 }
 
-module.exports = { getData, updateVolume, updateMovement, updateSimulation};
+async function updateName(spotId, name) {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    await conn.query('UPDATE spot SET name = ? WHERE id = ?', [name, spotId]);
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) await conn.end();
+  }
+}
+
+module.exports = { getData, updateVolume, updateMovement, updateSimulation, updateName};
