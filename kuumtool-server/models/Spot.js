@@ -26,4 +26,40 @@ async function getData() {
   }
 }
 
-module.exports = { getData };
+async function updateVolume(spotId, volume) {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    await conn.query('UPDATE spot SET volume = ? WHERE id = ?', [volume, spotId]);
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) await conn.end();
+  }
+}
+
+async function updateMovement(spotId, movement) {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    await conn.query('UPDATE spot SET movement = ? WHERE id = ?', [movement, spotId]);
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) await conn.end();
+  }
+}
+
+async function updateSimulation(spotId, simulated) {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    await conn.query('UPDATE spot SET simulated = ? WHERE id = ?', [simulated, spotId]);
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) await conn.end();
+  }
+}
+
+module.exports = { getData, updateVolume, updateMovement, updateSimulation};
