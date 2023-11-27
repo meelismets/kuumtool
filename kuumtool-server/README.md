@@ -1,10 +1,8 @@
-![GitHub Logo](../graphics/logo_white.png#gh-light-mode-only)
-![GitHub Logo](../graphics/logo_black.png#gh-dark-mode-only)
 <a href="https://github.com#gh-light-mode-only">
-<img src="../graphics/logo_black.png">
+    <img src="../graphics/logo_black.png">
 </a>
 <a href="https://github.com#gh-dark-mode-only">
-<img src="../graphics/logo_white.png">
+    <img src="../graphics/logo_white.png">
 </a>
 ### Out of box product that runs on Raspberry Pi is accessible through web browser: 
 `http://10.42.0.1`
