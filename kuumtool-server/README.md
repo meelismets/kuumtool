@@ -1,3 +1,10 @@
+![GitHub Logo](../graphics/logo_white.png)
+### Out of box product that runs on Raspberry Pi is accessible through web browser: 
+`http://10.42.0.1`
+
+To do so, you need to find WIFI SSID `kuumtool` and connect to it. Password is `kuumtool`.
+Next connect your arduino sensors to same wifi network, and use rest API to send data to server.
+
 # Kuumtool rest api
 
 ## Development server
