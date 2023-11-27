@@ -4,6 +4,7 @@
 <a href="https://github.com#gh-dark-mode-only">
     <img src="../graphics/logo_white.png">
 </a>
+
 ### Out of box product that runs on Raspberry Pi is accessible through web browser: 
 `http://10.42.0.1`
 

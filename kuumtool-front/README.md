@@ -1,4 +1,10 @@
-![GitHub Logo](../graphics/logo_white.png)
+<a href="https://github.com#gh-light-mode-only">
+    <img src="../graphics/logo_black.png">
+</a>
+<a href="https://github.com#gh-dark-mode-only">
+    <img src="../graphics/logo_white.png">
+</a>
+
 # KuumtoolFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
